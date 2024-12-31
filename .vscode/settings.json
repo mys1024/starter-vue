@@ -4,7 +4,7 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["intlify", "pinia"],
   "i18n-ally.localesPaths": ["src/locales"],
-  "editor.gotoLocation.multipleDefinitions": "goto"
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "cSpell.words": ["intlify", "pinia"]
 }
