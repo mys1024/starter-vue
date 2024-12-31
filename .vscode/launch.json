@@ -6,14 +6,14 @@
       "name": "Edge Debugger",
       "type": "msedge",
       "request": "launch",
-      "url": "http://localhost:5173",
+      "url": "http://localhost:9999",
       "webRoot": "${workspaceFolder}"
     },
     {
       "name": "Chrome Debugger",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:5173",
+      "url": "http://localhost:9999",
       "webRoot": "${workspaceFolder}"
     }
   ]
