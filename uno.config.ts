@@ -6,7 +6,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
   type Rule,
-} from 'unocss'
+} from 'unocss';
 
 export default defineConfig({
   presets: [
@@ -22,7 +22,7 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   rules: rules(),
-})
+});
 
 /**
  * Custom rules.
@@ -49,18 +49,18 @@ function rules(): Rule[] {
       }),
       {
         autocomplete: (() => {
-          const result: string[] = []
-          const axises = ['x', 'xr', 'y', 'yr']
-          const sizes = [1, 2, 4, 8, 16, '1px', '2px', '4px', '8px', '16px', '32px', '64px']
+          const result: string[] = [];
+          const axises = ['x', 'xr', 'y', 'yr'];
+          const sizes = [1, 2, 4, 8, 16, '1px', '2px', '4px', '8px', '16px', '32px', '64px'];
           axises.forEach((axis) => {
-            result.push(`flex-${axis}`)
+            result.push(`flex-${axis}`);
             sizes.forEach((size) => {
-              result.push(`flex-${axis}-${size}`)
-            })
-          })
-          return result
+              result.push(`flex-${axis}-${size}`);
+            });
+          });
+          return result;
         })(),
       },
     ],
-  ]
+  ];
 }
