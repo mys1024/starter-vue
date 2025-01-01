@@ -5,6 +5,7 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.keystyle": "nested",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "cSpell.words": ["intlify", "pinia"]
 }

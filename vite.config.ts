@@ -4,6 +4,7 @@ import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
@@ -20,6 +21,7 @@ export default defineConfig({
     VueI18n({
       include: [fileURLToPath(new URL('./src/locales/**', import.meta.url))],
     }),
+    UnoCSS(),
     AutoImport({
       imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
       dirs: ['./src/modules/**', './src/utils/**'],

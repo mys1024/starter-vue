@@ -1,8 +1,8 @@
 import pluginVue from 'eslint-plugin-vue'
-import vueTsEslintConfig from '@vue/eslint-config-typescript'
+import { defineConfig, createConfig as vueTsEslintConfig } from '@vue/eslint-config-typescript'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
-export default [
+export default defineConfig([
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
@@ -15,9 +15,10 @@ export default [
   ...vueTsEslintConfig(),
   skipFormatting,
   {
-    name: 'overwrite',
+    name: 'app/overwrite',
+    files: ['**/*.{ts,mts,tsx,vue}'],
     rules: {
       'vue/multi-word-component-names': 'off'
     }
   }
-]
+])
