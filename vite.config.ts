@@ -1,11 +1,12 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueDevTools from 'vite-plugin-vue-devtools'
-import vueI18n from '@intlify/unplugin-vue-i18n/vite'
-import autoImport from 'unplugin-auto-import/vite'
-import components from 'unplugin-vue-components/vite'
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+import VueDevTools from 'vite-plugin-vue-devtools'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,19 +14,20 @@ export default defineConfig({
     port: 9999,
   },
   plugins: [
-    vue(),
-    vueJsx(),
-    vueDevTools(),
-    vueI18n({
+    Vue(),
+    VueJsx(),
+    VueDevTools(),
+    VueI18n({
       include: [fileURLToPath(new URL('./src/locales/**', import.meta.url))],
     }),
-    autoImport({
+    AutoImport({
       imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
       dirs: ['./src/modules/**', './src/utils/**'],
       vueTemplate: true,
     }),
-    components({
-      deep: false,
+    Components({
+      globs: ['src/components/*.{vue,tsx}', 'src/components/*/index.{vue,tsx}'],
+      resolvers: [AntDesignVueResolver({ importStyle: 'css-in-js' })],
     }),
   ],
   resolve: {
