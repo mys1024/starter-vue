@@ -7,7 +7,7 @@ const open = ref(false);
     <AButton size="small" @click="open = !open">Hello</AButton>
     <AModal v-model:open="open" @ok="open = false">
       <div flex-x>
-        <span>Hi!</span>
+        <span>{{ t('hi') }}</span>
         <i i-carbon:face-activated />
       </div>
     </AModal>
