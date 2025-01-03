@@ -7,5 +7,5 @@
   "i18n-ally.localesPaths": ["src/locales"],
   "i18n-ally.keystyle": "nested",
   "editor.gotoLocation.multipleDefinitions": "goto",
-  "cSpell.words": ["iconify", "intlify", "pinia", "unocss", "unplugin", "vueuse"]
+  "cSpell.words": ["Attributify", "iconify", "intlify", "pinia", "unocss", "unplugin", "vueuse"]
 }

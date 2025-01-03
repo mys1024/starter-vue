@@ -26,10 +26,12 @@ export default defineConfig({
       imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
       dirs: ['./src/modules/**', './src/utils/**'],
       vueTemplate: true,
+      dts: './node_modules/.vue-starter/auto-imports.d.ts',
     }),
     Components({
       globs: ['src/components/*.{vue,tsx}', 'src/components/*/index.{vue,tsx}'],
       resolvers: [AntDesignVueResolver({ importStyle: 'css-in-js' })],
+      dts: './node_modules/.vue-starter/components.d.ts',
     }),
   ],
   resolve: {
