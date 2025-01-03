@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Index from '@/pages/index.vue';
+import { routes, handleHotUpdate } from 'vue-router/auto-routes';
+import { setupLayouts } from 'virtual:generated-layouts';
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: Index,
-    },
-  ],
+  routes: setupLayouts(routes),
 });
+
+if (import.meta.hot) {
+  handleHotUpdate(router);
+}

@@ -7,3 +7,6 @@ import './assets/main.scss';
 const app = createApp(App);
 installVueModules(app);
 app.mount('#app');
+
+// print version
+console.log('version:', import.meta.env.VERSION);

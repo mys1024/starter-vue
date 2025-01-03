@@ -4,11 +4,11 @@ const open = ref(false);
 
 <template>
   <div>
-    <AButton @click="open = !open">{{ t('test') }}</AButton>
+    <AButton size="small" @click="open = !open">Hello</AButton>
     <AModal v-model:open="open" @ok="open = false">
       <div flex-x>
-        <span>This is a test modal!</span>
-        <i i-carbon-cube />
+        <span>Hi!</span>
+        <i i-carbon:face-activated />
       </div>
     </AModal>
   </div>
